@@ -1,0 +1,78 @@
+#modelExplorer{
+  width: 100%;
+  vertical-align: top;
+  display: none
+}
+#graph{
+  width: 70%;
+  vertical-align: top;
+  display: inline-block;
+}
+#modelViewer{
+  width: 25%;
+  vertical-align: top;
+  display: inline-block;
+}
+
+#navTable{
+  width: 100%;
+  max-width: 600px;
+  align: center;
+}
+#navTable td{
+  /*width: 100%;*/
+  text-align: center;
+}
+.choiceSVG{
+  width: 60px;
+  height: 60px;
+}
+.choiceCircle{
+  cx:30;
+  cy:30;
+  r:10;
+  fill:white;
+  stroke:black;
+  stroke-width:0.5px;
+  cursor: pointer;
+}
+.choiceCircle:hover{
+  fill:grey;
+}
+.selectedCircle{
+  fill:red;
+}
+.selectedCircle:hover{
+  fill:red;
+}
+.zoomBox{
+  /*stroke:lightgrey;*/
+  fill:rgba(214, 214, 214, 0.3)
+
+}
+.axis path{
+  stroke:none;
+}
+.voteCircle {
+
+    fill: red;
+    fill-opacity: 0.5;
+}
+
+.modelBg{
+  fill:lightgrey;
+  fill-opacity:0.6;
+}
+.zoomDiv{
+  text-align: center;
+  padding-top: 25px;
+}
+
+.ing{
+  display: inline;
+  margin-right: 20px;
+}
+.ing input{
+  margin-left: 10px;
+  margin-bottom: 10px;
+}

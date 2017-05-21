@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+	<title>Mating and Mutation Experiment</title>
+
+	<link rel="stylesheet" type="text/css" href="../css/PS.css">
+	<link rel="stylesheet" type="text/css" href="../css/experiment.css">
+	<link rel="icon" href="css/favicon.ico">
+
+</head>
+
+
+<body>
+	<!-- main experiment text -->
+	<div>
+		<h1>Mating and Mutation Experiment</h1>
+		<h3>Generating Sensible and Unique Architectural Design Solutions</h3>
+
+		<p>Select Parametric Model Options</p>
+		<div id="ingredients">
+
+		</div>
+		<div>
+			<lable>Cartesian X</lable>
+			<select id="xnum" onchange="xnum=this.value" value="4">xAxis</select>
+			<lable>Cartesian Y</lable>
+			<select id="ynum" onchange="ynum=this.value" value="4">yAxis</select>
+			<lable>Metric Comps</lable>
+			<select id="metric" onchange="numMetric=this.value" value="4">Number of Metric Components</select>
+			<a class="button" id="run" >
+				Run
+			</a>
+		</div>
+
+
+		<p>Select Crossover Options</p>
+		<!-- navigation -->
+		<div id="navigation">
+
+
+		</div>
+
+	</div>
+
+	<!-- result exploration with graph -->
+	<div id="modelExplorer">
+		<!-- graph here -->
+		<div id="graph">
+
+		</div>
+		<!-- model details here -->
+		<div id="modelViewer">
+
+		</div>
+
+	</div>
+
+	<div style="display:none">
+		<input id="n" name="n" class="inputs" value="1" required>
+		<input type="checkbox" class="inputs" id="mutate" name="mutate" value="mutate"> Mutate<br>
+		<a class="button" id="update" >
+			Update
+		</a>
+		<a class="button" id="hideModel" >
+			Toggle Model View
+		</a>
+		<a class="button" id="hideSketch" >
+			Toggle Sketch View
+		</a>
+
+
+	</div>
+	<div>
+		<lable>X-Axis Value</lable>
+		<select id="xOption" onchange="draw(this.value,yParam)">xAxis</select>
+		<lable>Y-Axis Value</lable>
+		<select id="yOption" onchange="draw(xParam,this.value)">yAxis</select>
+		<a class="button" id="update" onclick="update(currChoice)">
+		Update
+		</a>
+		<a class="button" id="download" onclick="saveSVG()">Download</a>
+		<a class="button" id="refresh" onclick="zoomExtent()">Refresh</a>
+
+	</div>
+	<!-- <div id="mainDiv" style="display:none; width:45%"> -->
+
+	<div id="zoomDiv" class="zoomDiv"></div>
+	<div id="multiplesDiv" style="display:none" class="zoomDiv"></div>
+	<div id="zoomNet"></div>
+	<div id="mainDiv" style="display:inline-block; width:45%">
+
+
+ </div>
+ <div width="20%" style="vertical-align:top;">
+	 <div id="networkDiv" style="display:inline-block;">
+		 <svg id="networkSVG"></svg>
+
+
+	 </div>
+
+	 <div id="graphTextDiv" style="display:inline-block;position:fixed;top:0px;right:20px">
+
+ 	</div>
+
+
+ </div>
+
+
+
+<!-- libraries -->
+<script src='../js/lib/d3.js'></script>
+<script src='../js/lib/d3-save-svg.min.js'></script>
+<script type="text/javascript"  src="../js/lib/jquery-1.11.3.js"></script>
+
+
+<!-- scripts -->
+<script >
+
+
+</script>
+<script src="../js/helper.js"></script>
+<script src="../js/replication.js"></script>
+<script src="../js/objects.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/system.js"></script>
+<script src="../js/seed.js"></script>
+<script src="../js/draw.js"></script>
+
+
+
+<script src="../js/experiment.js"></script>
+
+
+</body>
+</html>
