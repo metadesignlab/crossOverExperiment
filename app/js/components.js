@@ -10,6 +10,17 @@ class BaseComponent{
     this.replicate=true;
     this.passedRun=false;
   }
+  getLess(){
+    let cgpPostion=[0,0]
+    if(this.cgpPostion) cgpPostion=this.cgpPostion;
+    return {
+      "id":this.id,
+      "cgpPostion":cgpPostion,
+      "passedRun":this.passedRun,
+      "name":this.constructor.name,
+      "outputs":this.outputs
+    }
+  }
 
 ///is this in the correct place?
   isEmpty(){

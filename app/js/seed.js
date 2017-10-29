@@ -6,7 +6,7 @@ class Seed {
     this.typology={x,y,ingredients,numMetric,numInputs}
     this.typology.components=[];
     this.genotype={metric:[],func:[],topo:[]}
-    this.phenotype=new System;
+    this.phenotype=new System
     this.outputs=[];
     this.parents=[];
     this.outputTypes=[];
@@ -477,6 +477,7 @@ static clone(seed){
 ///function to update the phenotype based on the genotype
   update(){
     // let sup=performance.now()
+    let network={"components":[],"links":[]}
 
 
     ///create numeric components
@@ -486,7 +487,7 @@ static clone(seed){
     let outputs=this.outputs
     // let components=this.components
     let ingredients=this.typology.ingredients
-    let system=this.phenotype;
+    let system=this.phenotype
     let currRank=0;
 
 
@@ -542,9 +543,18 @@ static clone(seed){
 
 
     system.update()
-
-
     this.getMetrics()
+
+    let compss=[]
+    system.components.forEach(comp=>{
+      compss.push(comp.getLess())
+    })
+
+    system.components=compss;
+    this.outputs=[]
+
+
+
     // console.log(`seed update took ${performance.now()-sup}`);
 
 

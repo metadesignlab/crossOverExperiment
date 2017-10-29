@@ -263,6 +263,7 @@ function updateModel(svg,geometry,gScale=100){
 function updateGraph(g,system){
 
 
+
   //this might want to be dynamic
   let boxWidth = 70;
   let boxHeight = 60;
@@ -338,10 +339,10 @@ function updateGraph(g,system){
         outputHt = inOutScaleH( d.va );
       }
       let inputHt = 0.0;
-      if (bIn.length > 1){
-        inOutScaleH.domain([0,bIn.length-1])
-        inputHt = inOutScaleH( d.vb );
-      }
+      // if (bIn.length > 1){
+      //   inOutScaleH.domain([0,bIn.length-1])
+      //   inputHt = inOutScaleH( d.vb );
+      // }
 
       let p = "M"
             +(scaleW(d.ca.cgpPostion[0])+halfBoxWidth)+","
