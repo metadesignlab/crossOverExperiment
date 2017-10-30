@@ -23,12 +23,19 @@
 
 		</div>
 		<div>
-			<lable>Cartesian X</lable>
-			<select id="xnum" onchange="xnum=this.value" value="4">xAxis</select>
-			<lable>Cartesian Y</lable>
-			<select id="ynum" onchange="ynum=this.value" value="4">yAxis</select>
-			<lable>Metric Comps</lable>
-			<select id="metric" onchange="numMetric=this.value" value="4">Number of Metric Components</select>
+			<label>Cartesian X</label>
+			<select id="xnum" onchange="xnum=Number(this.value)" value="4">xAxis</select>
+			<label>Cartesian Y</label>
+			<select id="ynum" onchange="ynum=Number(this.value)" value="4">yAxis</select>
+			<label>Metric Comps</label>
+			<select id="metric" onchange="numMetric=Number(this.value)" value="4">Number of Metric Components</select>
+
+			<label>Number of Plans</label>
+			<select id="qty" onchange="qty=Number(this.value)" value="6">Number of Plans</select>
+			<label>Number of Iterations</label>
+			<select id="rounds" onchange="rounds=Number(this.value)" value="6">Number of Iterations</select>
+
+
 			<a class="button" id="run" >
 				Run
 			</a>
@@ -38,9 +45,8 @@
 		<p>Select Crossover Options</p>
 		<!-- navigation -->
 		<div id="navigation">
-
-
 		</div>
+
 
 	</div>
 
@@ -73,9 +79,9 @@
 
 	</div>
 	<div>
-		<lable>X-Axis Value</lable>
+		<label>X-Axis Value</label>
 		<select id="xOption" onchange="draw(this.value,yParam)">xAxis</select>
-		<lable>Y-Axis Value</lable>
+		<label>Y-Axis Value</label>
 		<select id="yOption" onchange="draw(xParam,this.value)">yAxis</select>
 		<a class="button" id="update" onclick="update(currChoice)">
 		Update

@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	let arrayTen=[1,2,3,4,5,6,7,8,9,10];
+	let arrayTen=[2,3,4,5,6,7,8,9,10];
 	let ingredients=[AdditionComp,PointComp,LineComp,LineDivComp,LineByPointDirLengthComp,TriangleComp,RectComp]
 	d3.select("#ingredients").selectAll('input').data(ingredients).enter()
 	.append('div').attr('class',"ing")
@@ -14,6 +14,8 @@ $(document).ready(function(){
 			else ings.push(d)
 		});
 
+	d3.select("#qty").selectAll('option').data(arrayTen).enter().append("option").text(function(d) { return d }).attr("selected",function(d,i){if(d===qty)return "selected"});
+	d3.select("#rounds").selectAll('option').data(arrayTen).enter().append("option").text(function(d) { return d }).attr("selected",function(d,i){if(d===rounds)return "selected"});
 	d3.select("#xnum").selectAll('option').data(arrayTen).enter().append("option").text(function(d) { return d }).attr("selected",function(d,i){if(d===xnum)return "selected"});
 	d3.select("#ynum").selectAll('option').data(arrayTen).enter().append("option").text(function(d) { return d }).attr("selected",function(d,i){if(d===ynum)return "selected"});
 	d3.select("#metric").selectAll('option').data(arrayTen).enter().append("option").text(function(d) { return d }).attr("selected",function(d,i){if(d===numMetric)return "selected"});
@@ -82,6 +84,9 @@ let xnum=4
 let ynum=5
 let numMetric=3
 
+let rounds=6;
+let qty=6;
+
 // let ings=[PointComp,RectComp,FloorComp,LineByPointDirLengthComp,TrimLineComp,WallComp,ColumnComp,ColorComp,ColorSVGComp]
 // let ings=[PointComp,LineByPointDirLengthComp,WallComp,RectComp,ColumnComp,ColorComp,ColorSVGComp]
 // let ings=[PointComp,RectComp,LineByPointDirLengthComp,EdgeComp,WallComp,FloorComp]
@@ -103,8 +108,7 @@ let xOptions;
 let multiples;
 
 
-let rounds=4;
-let qty=4;
+
 
 let currChoice;
 let currRound=-1;
@@ -130,9 +134,6 @@ function reset(){
 	 xOptions;
 	 multiples;
 
-
-	 rounds=4;
-	 qty=4;
 
 	 currChoice;
 	 currRound=-1;
@@ -163,6 +164,7 @@ function saveSVG(){
 
 }
 function init(){
+
 
 	for(let j=0;j<qty;j++){
 		let i=0;
@@ -334,6 +336,7 @@ function getNode(id){
 }
 
 function addRound(i,selType,mate,mutate){
+
 	// console.log(qty,rounds);
 
 
@@ -523,6 +526,7 @@ function update(choice={id: 0, mutate: true, mate: true, selType: "Random"}){
 		// console.log(currRound,nodes);
 
 	}else {
+
 		nodes=[];
 		links=[];
 		nodes.push(...initPop)
@@ -571,11 +575,13 @@ function drawMultiples(){
 			.orient("left").ticks(xOptions.length);
 
 
-			let qty=xOptions.length;
+			let qty_=xOptions.length;
 
 
-			svgGraphW = (width-(qty*5))/(qty+1);
-			svgGraphH = (height-(qty*5))/(qty+1);
+			svgGraphW = 100;
+			svgGraphH = 100;
+			// svgGraphW = (width-(qty_*5))/(qty_+1);
+			// svgGraphH = (height-(qty_*5))/(qty_+1);
 
 
 
@@ -750,8 +756,10 @@ function draw(selX="serial",selY="round"){
 	let height=zoomCanvas.height;
 
 
-	svgGraphW = (width-(qty*5))/(qty+1);
-	svgGraphH = (height-(rounds*5))/(rounds+1);
+	svgGraphW = 100
+	svgGraphH = 100
+	// svgGraphW = (width-(qty*5))/(qty+1);
+	// svgGraphH = (height-(rounds*5))/(rounds+1);
 
 
 
