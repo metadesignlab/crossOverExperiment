@@ -1,5 +1,8 @@
 $(document).ready(function(){
-	let arrayTen=[2,3,4,5,6,7,8,9,10];
+	// let arrayTen=[2,3,4,5,6,7,8,9,10,11,12,13,14];
+
+	let arrayTen=[]
+	for(let j=1;j<21;j++){arrayTen.push(j)}
 	let ingredients=[AdditionComp,PointComp,LineComp,LineDivComp,LineByPointDirLengthComp,TriangleComp,RectComp]
 	d3.select("#ingredients").selectAll('input').data(ingredients).enter()
 	.append('div').attr('class',"ing")
