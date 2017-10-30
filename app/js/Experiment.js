@@ -578,8 +578,13 @@ function drawMultiples(){
 			let qty_=xOptions.length;
 
 
-			svgGraphW = 100;
-			svgGraphH = 100;
+			// svgGraphW = 100;
+			// svgGraphH = 100;
+			fit=qty
+			if (qty<rounds){fit=rounds}
+			svgGraphW = (width-(fit*5))/(fit+1);
+			svgGraphH = (height-(fit*5))/(fit+1);
+
 			// svgGraphW = (width-(qty_*5))/(qty_+1);
 			// svgGraphH = (height-(qty_*5))/(qty_+1);
 
@@ -756,8 +761,12 @@ function draw(selX="serial",selY="round"){
 	let height=zoomCanvas.height;
 
 
-	svgGraphW = 100
-	svgGraphH = 100
+	// svgGraphW = 100
+	// svgGraphH = 100
+	fit=qty
+	if (qty<rounds){fit=rounds}
+	svgGraphW = (width-(fit*5))/(fit+1);
+	svgGraphH = (height-(fit*5))/(fit+1);
 	// svgGraphW = (width-(qty*5))/(qty+1);
 	// svgGraphH = (height-(rounds*5))/(rounds+1);
 
