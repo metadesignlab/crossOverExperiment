@@ -16,37 +16,46 @@
 	<!-- main experiment text -->
 	<div>
 		<h1>Mating and Mutation Experiment</h1>
-		<h3>Generating Sensible and Unique Architectural Design Solutions</h3>
-
-		<p>Select Parametric Model Options</p>
-		<div id="ingredients">
-
+		<h3>Exploring generating unique architectural design solutions, using automatically generated and evolved parametric models.</h3>
+		<br>
+		<p>Select Parametric Model Components Available</p>
+		<div id="ingredients" class="pick">
+			<!-- auto filled -->
 		</div>
-		<div>
+		<p>Select Generated Parametric Model Size</p>
+		<div class="pick">
 			<label>Cartesian X</label>
-			<select id="xnum" onchange="xnum=Number(this.value)" value="4">xAxis</select>
+			<select id="xnum" onchange="xnum=Number(this.value)" value="5">xAxis</select>
 			<label>Cartesian Y</label>
-			<select id="ynum" onchange="ynum=Number(this.value)" value="4">yAxis</select>
+			<select id="ynum" onchange="ynum=Number(this.value)" value="5">yAxis</select>
 			<label>Metric Comps</label>
-			<select id="metric" onchange="numMetric=Number(this.value)" value="4">Number of Metric Components</select>
-
-			<label>Number of Plans</label>
-			<select id="qty" onchange="qty=Number(this.value)" value="6">Number of Plans</select>
-			<label>Number of Iterations</label>
-			<select id="rounds" onchange="rounds=Number(this.value)" value="6">Number of Iterations</select>
-
-
-			<a class="button" id="run" >
-				Run
-			</a>
+			<select id="metric" onchange="numMetric=Number(this.value)" value="5">Number of Metric Components</select>
 		</div>
-
 
 		<p>Select Crossover Options</p>
 		<!-- navigation -->
-		<div id="navigation">
+		<div id="navigation" class="pick">
+			<!-- auto filled -->
+		</div>
+		<p>Select Evolution Run Size</p>
+		<div class="pick">
+			<label>Number of Plans</label>
+			<select id="qty" onchange="qty=Number(this.value)" value="7">Number of Plans</select>
+			<label>Number of Iterations</label>
+			<select id="rounds" onchange="rounds=Number(this.value)" value="7">Number of Iterations</select>
+
+
+
 		</div>
 
+
+		<div class="pick">
+			<br>		
+		<a class="button" id="run" >
+		   Run
+		</a>
+		<br>
+		</div>
 
 	</div>
 
@@ -63,7 +72,8 @@
 
 	</div>
 
-	<div style="display:none">
+	<p>View Options</p>
+	<div style="display:none" class="pick">
 		<input id="n" name="n" class="inputs" value="1" required>
 		<input type="checkbox" class="inputs" id="mutate" name="mutate" value="mutate"> Mutate<br>
 		<a class="button" id="update" >
@@ -78,16 +88,17 @@
 
 
 	</div>
-	<div>
+
+	<div class="pick">
 		<label>X-Axis Value</label>
 		<select id="xOption" onchange="draw(this.value,yParam)">xAxis</select>
 		<label>Y-Axis Value</label>
 		<select id="yOption" onchange="draw(xParam,this.value)">yAxis</select>
-		<a class="button" id="update" onclick="update(currChoice)">
+		<a class="button small" id="update" onclick="update(currChoice)">
 		Update
 		</a>
-		<a class="button" id="download" onclick="saveSVG()">Download</a>
-		<a class="button" id="refresh" onclick="zoomExtent()">Refresh</a>
+		<a class="button small" id="download" onclick="saveSVG()">Download</a>
+		<a class="button small" id="refresh" onclick="zoomExtent()">Refresh</a>
 
 	</div>
 	<!-- <div id="mainDiv" style="display:none; width:45%"> -->

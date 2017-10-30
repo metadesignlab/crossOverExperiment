@@ -24,7 +24,7 @@
 body{
   background-color: #fdf6e3;
   color:#657b83;
-  font-family: Theinhardt-Regular;
+  font-family: Theinhardt-Thin;
 }
 p{
   font-size: 18px;
@@ -34,7 +34,14 @@ strong{
    font-weight: normal;
  }
 
- .node{
+
+.pick {
+   text-align:center;
+   width: 80%;
+   margin: 0 auto;
+}
+
+.node{
    fill: black;
 
 }
@@ -90,8 +97,8 @@ aside{
 	-webkit-border-radius:42px;
 	border-radius:42px;
 	display:inline-block;
-	color:lightGrey;
-	font-family: Theinhardt-Thin;
+	color:657b83;
+	font-family: Theinhardt-Regular;
 	font-weight: normal;
 	font-size:18px;
 	padding:12px 31px;
@@ -102,6 +109,15 @@ aside{
 .button:active {
 	position:relative;
 	top:1px;
+}
+.button.small {
+	background-color:#dbb133;
+	-moz-border-radius:32px;
+	-webkit-border-radius:32px;
+	font-family: Theinhardt-Thin;
+	border-radius:32px;
+	font-size:16px;
+	padding:8px 21px;
 }
 #model{
   outline: none;
