@@ -22,12 +22,12 @@ class BaseComponent{
     }
   }
 
-///is this in the correct place?
+ ///is this in the correct place?
   isEmpty(){
     return this.size==0;
   }
 
-/////used to have a (runID)
+ /////used to have a (runID)
   checkAndRun(){
     var checks=this.checkPointers();
 
@@ -42,7 +42,7 @@ class BaseComponent{
   }
 
 
-/////should we handle seperate error logs?
+ /////should we handle seperate error logs?
   checkPointers(){
     var self=this;
     var check=true;
@@ -113,7 +113,7 @@ class BaseComponent{
 
     }
   }
-////executed after checkAndRun
+ ////executed after checkAndRun
   update(){
     var order;
     if(this.replicate){

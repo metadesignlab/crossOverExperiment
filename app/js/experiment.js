@@ -3,7 +3,18 @@ $(document).ready(function(){
 
 	let arrayTen=[]
 	for(let j=1;j<21;j++){arrayTen.push(j)}
-	let ingredients=[AdditionComp,PointComp,LineComp,LineDivComp,LineByPointDirLengthComp,TriangleComp,RectComp]
+	let ingredientGroups=[
+		[AdditionComp,SubtractionComp,MultiplicationComp],
+		[PointComp,LineComp,TriangleComp,RectComp,PolygonComp],
+		[ColorComp,ColorSVGComp,LineDivComp,LineByPointDirLengthComp,MoveGeometryComp],
+		[EdgeComp,WallComp,ColumnComp]
+	]
+	let ingredients=[]
+	for (group in ingredientGroups){
+		for (ing in ingredientGroups[group]){
+			ingredients.push(ingredientGroups[group][ing])
+		}
+	}
 	d3.select("#ingredients").selectAll('input').data(ingredients).enter()
 	.append('div').attr('class',"ing")
 	.append('label').attr('for',function(d,i){ return 'ing'+i; }).text(function(d){return d.name})
@@ -83,9 +94,9 @@ $(window).resize(function() {
 var graphTextDiv = d3.select("body").select("#graphTextDiv").append("pre");
 // console.log("here here");
 /////////////////////////////////
-let xnum=4
-let ynum=5
-let numMetric=3
+let xnum=6
+let ynum=6
+let numMetric=6
 
 let rounds=6;
 let qty=6;
