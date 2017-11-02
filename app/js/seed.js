@@ -131,7 +131,7 @@ class Seed {
     let geno2=seed2.genotype
     let geno3=child.genotype
 
-    let mateWorker = new Worker('../js/seedWorker.js');
+    let mateWorker = new Worker('./js/seedWorker.js');
 
     mateWorker.postMessage([geno1,geno2,n]);
     mateWorker.onmessage=function(e){
