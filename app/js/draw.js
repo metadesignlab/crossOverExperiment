@@ -424,7 +424,8 @@ function updateGraph(g,system){
   .attr("text-anchor","middle")
   .attr("alignment-baseline","central")
   .text(function(d){
-    let cName = d.constructor.name;
+    // let cName = d.constructor.name;
+    let cName = d.name;
     cName = cName.split("Comp")[0];
     return cName;
   })
@@ -439,7 +440,8 @@ function updateGraph(g,system){
   .text(function(d){
     let col="lightgrey"
 
-    let cName = d.constructor.name;
+    // let cName = d.constructor.name;
+    let cName = d.name;
     //should really check that there is only one number....
     if(cName =="NumberComp") {
       cName = d.outputs[0][0].toString();
