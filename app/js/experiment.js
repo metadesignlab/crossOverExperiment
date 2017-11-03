@@ -87,6 +87,8 @@ $( ".sketch" ).toggle();
 $(window).resize(function() {
 	d3.select(".modelStuff").selectAll("svg").remove();
   draw(xParam,yParam)
+	// console.log(selNetwork)
+	// showNetwork(selNetwork)
 	drawMultiples()
 });
 
@@ -100,6 +102,7 @@ let numMetric=6
 
 let rounds=6;
 let qty=6;
+let split=1200;
 
 // let ings=[PointComp,RectComp,FloorComp,LineByPointDirLengthComp,TrimLineComp,WallComp,ColumnComp,ColorComp,ColorSVGComp]
 // let ings=[PointComp,LineByPointDirLengthComp,WallComp,RectComp,ColumnComp,ColorComp,ColorSVGComp]
@@ -120,6 +123,7 @@ let xParam;
 let yParam;
 let xOptions;
 let multiples;
+let selNetwork;
 
 
 
@@ -720,8 +724,14 @@ function drawMultiples(){
 function createZoomCanvas(div,id){
 	d3.select(`#${div}`).selectAll("svg").remove();
 	w=$(window).width();
-	w=0.9*w;
+
+	if (w>split){
+		console.log("split");
+		w=0.9*w*0.5;
+	}else{w=0.9*w}
+
 	h=w;
+
 
 	///setup
 	var margin = {top: 0, right: 0, bottom: 0, left: 0},
@@ -775,6 +785,9 @@ function draw(selX="serial",selY="round"){
 	let container=zoomCanvas.container;
 	let width=zoomCanvas.width;
 	let height=zoomCanvas.height;
+
+
+
 
 
 	// svgGraphW = 100
@@ -891,6 +904,7 @@ function draw(selX="serial",selY="round"){
 	     .enter().append("circle")
 			 .on("mouseover", function(d){
 				 console.log(JSON.stringify(d.metrics));
+				 selNetwork=d.phenotype;
 				 return showNetwork(d.phenotype)
 			 })
 	       .attr("r", function(d){
@@ -964,6 +978,7 @@ function draw(selX="serial",selY="round"){
 		})
 		.attr("class","modelBg")
 		.on("mouseover", function(d){
+			selNetwork=d.phenotype
 			return showNetwork(d.phenotype)
 		});
 		// .attr("fill-opacity", 0.6);
@@ -986,11 +1001,17 @@ function draw(selX="serial",selY="round"){
 		});
 
 	}
-	function showNetwork(network){
-		svgGraphW=w=$(window).width();
+	function showNetwork(network=selNetwork){
+		// svgGraphW=w=$(window).width();
+		if ($(window).width()>split){
+			svgGraphW=$(window).width()*0.5*0.9
+		}else{
+			svgGraphW=$(window).width()*0.9
+		}
+
 
 		// svgGraphH = 1500;
-		svgGraphH = svgGraphW*0.5;
+		svgGraphH = svgGraphW*0.8;
 		/////add graph
 		let svgGphID="#networkSVG"
 		// svgGraphW = svgGraphH*0.75;
