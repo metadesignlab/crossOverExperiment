@@ -46,7 +46,7 @@ d3.select("#run")
 		// runModel(model);
 		reset()
 		init()
-		update()
+		update(currChoice)
 	});
 d3.select("#default")
 	.on("click", function(){
@@ -142,14 +142,14 @@ function reset(){
 	 links=[];
 	 parent,parents,parentA,parentB;
 	 seed;
-	 choices=[];
+	//  choices=[];
 	 xParam;
 	 yParam;
 	 xOptions;
 	 multiples;
 
 
-	 currChoice;
+	//  currChoice;
 	 currRound=-1;
 
 	 maxVote=5;
@@ -523,6 +523,8 @@ function update(choice={id: 0, mutate: true, mate: true, selType: "Random"}){
 	let selType=choice.selType;
 	let mate=choice.mate;
 	let mutate=choice.mutate;
+
+
 
 
 
