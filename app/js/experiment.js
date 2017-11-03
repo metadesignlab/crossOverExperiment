@@ -962,7 +962,10 @@ function draw(selX="serial",selY="round"){
 
 			// return `translate(${-0.5*(svgGraphH)},${-0.5*(svgGraphH)})`
 		})
-		.attr("class","modelBg");
+		.attr("class","modelBg")
+		.on("mouseover", function(d){
+			return showNetwork(d.phenotype)
+		});
 		// .attr("fill-opacity", 0.6);
 		let modelG=gGeo.append("g")
 		.attr("transform", function(d){
